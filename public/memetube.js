@@ -6,8 +6,28 @@ $(document).ready(function() {
   // hide videos and show form when 'add video'is clicked
   $('#add-video').on('click', showNewVideoForm)
 
+  // add new video once form is filled
+  $('#new-video-form').on('submit', addVideo);
+
 
 })
+
+function addVideo(e) {
+  e.preventDefault();
+  console.log('boo');
+  data = {
+    title: $('#title').val(),
+    description: $('#description').val(),
+    url: $('#url').val(),
+    genre: $('#genre').val()
+  };
+  $.post('/videos', data, function(response) {
+    console.log(response);
+    appendNewVideo(response);
+    showVideo(response);
+  })
+
+}
 
 function getVideos() {
   request('GET','/videos', null).done(function(response){
@@ -41,3 +61,12 @@ function showNewVideoForm() {
   $('#video-pane').hide();
   $('#new-video-form').show();
 }  
+
+function showVideo(video) {
+
+  console.log('banana')
+  console.log(video)
+
+}
+
+

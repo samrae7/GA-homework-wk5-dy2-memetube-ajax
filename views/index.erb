@@ -1,5 +1,6 @@
-<form id='new-video-form' action="/videos" method="post">
-  
+<!-- NEW VIDEO  FORM -->
+<form id='new-video-form'>
+
   <fieldset>
 
     <ul>
@@ -21,20 +22,32 @@
        </li>
     </ul>
 
-    <button class='new-edit' type="submit">Add video</button>
+    <button class='new-edit' id='new-video-button' type="submit">Add video</button>
 
   </fieldset>
 
 </form>
 
+<!-- SHOW VIDEO -->
 
-<!-- # <% @videos.each do |video| %>
+ <div class='video-box'>
 
-# <div class ='thumbnail-holder'>
-#   <a href="/videos/<%=video['id']%>"><img src="http://img.youtube.com/vi/<%=video['url']%>/mqdefault.jpg" alt="<%= video['title'] %>"></a>
+  <h2><%= @title %></h2>
 
-#   <p><a href="/videos/<%=video['id']%>"><%= video['title'] %></a></p>
-# </div>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @url %>" frameborder="0" allowfullscreen></iframe>
 
-# <% end %>
- -->
+  <p>Genre: <%= @genre %></p>
+
+  <p><%= @description %></p>
+
+  <p><a href="https://youtu.be/<%= @url %>">Watch on YouTube</a></p>
+
+  <form action="/videos/<%= @id %>/edit" method ='get'>
+    <button>Edit this video</button>
+  </form>
+
+  <form action="/videos/<%= @id %>/delete" method ='post'>
+    <button>Delete this video</button>
+  </form>
+
+</div>

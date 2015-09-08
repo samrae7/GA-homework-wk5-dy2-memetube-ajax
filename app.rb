@@ -36,9 +36,8 @@ get'/videos' do
 end
 
  # NEW
-get '/videos/new' do
-  # erb :new 
-end
+
+ # I think I have replaced this with jquery - click event on 'add video' that hides the videos on the page and shows the new video form
 
  # CREATE
 post '/videos' do
@@ -49,12 +48,15 @@ post '/videos' do
 
   sql="insert into videos (title, description, genre, url) values ( '#{params[:title]}', '#{params[:description]}','#{params[:genre]}','#{@url_snippet}') returning *"
 
- @videos = @db.exec(sql)
+  @videos = @db.exec(sql)
 
- id = @videos.first['id']
+#  id = @videos.first['id']
 
-redirect to "/videos/#{id}"
+# redirect to "/videos/#{id}"
 
+  if request.xhr?
+    json @videos.entries.first
+  end
 end
 
  # SHOW
@@ -72,7 +74,7 @@ get '/videos/:id' do
   @genre = @video.first['genre']
   
 
-  erb :video
+  # erb :video
 
 
 end

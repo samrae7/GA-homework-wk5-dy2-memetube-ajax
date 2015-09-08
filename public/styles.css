@@ -130,6 +130,7 @@ button.new-edit {
 
 .video-box {
   margin-left: 10px;
+  display: none;
 }
 
 #new-video-form {
