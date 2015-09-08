@@ -1,0 +1,28 @@
+<form action="/videos/<%= @id %>" method="post">
+  
+  <fieldset>
+
+    <ul>
+      <li>
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" size='30' value = "<%= @title %>">
+        </li>
+      <li>
+          <label for="description">Description:</label>
+          <input type="text" id="description" name="description" size='30' value= "<%= @description %>">
+       </li>
+      <li>
+          <label for="genre">Genre:</label>
+          <input type="text" id="genre" name="genre" size='30' value="<%= @genre %>">
+        </li>
+      <li>
+         <label for="url">URL:</label>
+         <input type="text" id="url" name="url" size='30' value="https://youtu.be/<%= @url %>">
+       </li>
+    </ul>
+
+    <button class= 'new-edit' type ="submit">Save changes</button>
+
+  </fieldset>
+
+</form>

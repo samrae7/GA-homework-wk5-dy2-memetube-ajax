@@ -1,0 +1,137 @@
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+
+body {
+  font-size:18px;
+  font-family: 'Lato', sans-serif;
+  min-height: 900px;
+  background:
+    linear-gradient(45deg, hsla(352, 96%, 45%, 1) 0%, hsla(352, 96%, 45%, 0) 70%),
+    linear-gradient(135deg, hsla(253, 95%, 42%, 1) 10%, hsla(253, 95%, 42%, 0) 80%),
+    linear-gradient(225deg, hsla(179, 91%, 45%, 1) 10%, hsla(179, 91%, 45%, 0) 80%),
+    linear-gradient(315deg, hsla(119, 96%, 49%, 1) 100%, hsla(119, 96%, 49%, 0) 70%);
+}
+
+.page-wrapper {
+  width:81%;
+  margin: 0 auto;
+  background-color: white;
+  padding:0 10px 10px 10px;
+
+}
+
+h1,h2,h3,h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.thumbnail-holder a, nav a {
+  color: black;
+}
+
+a:active {
+  color: #551A8B;
+}
+
+h1 {
+  margin: 10px 0 3px 0px;
+  font-size: 3em;
+
+}
+
+h1 a {
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+  display:inline-block;
+  margin: 0 12px 15px 10px;
+  font-size: 1.2em;
+}
+
+
+div.thumbnail-holder {
+  float:left;
+  margin: 10px;
+}
+
+.thumbnail-holder p {
+  margin:5px;
+}
+
+
+ fieldset {
+  margin-bottom: 10px;
+  border:none;
+  padding:0;
+}
+
+ label {
+  display: inline-block;
+  line-height: 1.8;
+  vertical-align: top;
+}
+ fieldset ul {
+  padding: 0;
+}
+
+fieldset li {
+  list-style: none;
+  padding: 5px;
+  margin: 0 0 0 5px;
+}
+
+ label {
+  width: 120px; /* Width of labels */
+}
+
+button {
+  
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+button.new-edit {
+  margin-left:10px;
+}
+
+.video-box {
+  margin-left: 10px;
+}
+
+#new-video-form {
+  display: none;
+}
