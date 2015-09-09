@@ -9,6 +9,9 @@ $(document).ready(function() {
   // add new video once form is filled
   $('#new-video-form').on('submit', addVideo);
 
+  // delete video event listener with event delegation because delete button is not displayed on the page from the start
+  $('.page-wrapper').on('click', '#delete-button', removeVideo)
+
 
 })
 
@@ -74,4 +77,6 @@ function showVideo(video) {
   $('<h2>' + video.title + '</h2><iframe width="560" height="315" src="https://www.youtube.com/embed/' + video.url + '"frameborder="0" allowfullscreen></iframe><p>Genre:' + video.genre + '</p><p>' + video.description + '</p><p><a href="https://youtu.be/' + video.url + '">Watch on YouTube</a></p>').prependTo("#video-box")
 }
 
-
+function removeVideo() {
+  console.log ('remove video')
+}

@@ -121,11 +121,13 @@ post '/videos/:id/delete' do
 
   # question - i thought this would work with a get and without the need for a form. why doesn't it? ie by going to the url you could delete the item.
 
-  sql = "delete from videos where id =#{params[:id]}"
+  sql = "delete from videos where id = #{params[:id]}"
 
   @db.exec(sql)
 
-  redirect to '/videos'
+  if request.xhr?
+  [200, {"Content-Type" => "application/json"}, {status: :ok}]
+  end
 
 end
 
