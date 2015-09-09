@@ -30,17 +30,7 @@
 
 <!-- SHOW VIDEO -->
 
- <div class='video-box'>
-
-  <h2><%= @title %></h2>
-
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @url %>" frameborder="0" allowfullscreen></iframe>
-
-  <p>Genre: <%= @genre %></p>
-
-  <p><%= @description %></p>
-
-  <p><a href="https://youtu.be/<%= @url %>">Watch on YouTube</a></p>
+ <div id='video-box'>
 
   <form action="/videos/<%= @id %>/edit" method ='get'>
     <button>Edit this video</button>

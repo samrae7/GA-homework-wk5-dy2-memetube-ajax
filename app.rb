@@ -37,7 +37,7 @@ end
 
  # NEW
 
- # I think I have replaced this with jquery - click event on 'add video' that hides the videos on the page and shows the new video form
+ # I think I have replaced this with jquery - click event on 'add video' that hides the videos on the page and shows the new video form UNLESS you took the keys from the video hash and used them to create the form.
 
  # CREATE
 post '/videos' do
@@ -68,10 +68,10 @@ get '/videos/:id' do
 
   @video = @db.exec(sql)
 
-  @url = @video.first['url']
-  @title = @video.first['title']
-  @description = @video.first['description']
-  @genre = @video.first['genre']
+  # @url = @video.first['url']
+  # @title = @video.first['title']
+  # @description = @video.first['description']
+  # @genre = @video.first['genre']
   
 
   # erb :video

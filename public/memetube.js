@@ -67,6 +67,11 @@ function showVideo(video) {
   console.log('banana')
   console.log(video)
 
+  $('#new-video-form').hide()
+  $('#video-box').show()
+  console.log(video.url)
+
+  $('<h2>' + video.title + '</h2><iframe width="560" height="315" src="https://www.youtube.com/embed/' + video.url + '"frameborder="0" allowfullscreen></iframe><p>Genre:' + video.genre + '</p><p>' + video.description + '</p><p><a href="https://youtu.be/' + video.url + '">Watch on YouTube</a></p>').prependTo("#video-box")
 }
 
 
